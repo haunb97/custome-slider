@@ -1,0 +1,70 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  font-family: "Open Sans", sans-serif;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background-color: #fff;
+  color: #000;
+  line-height: 1.7;
+}
+
+.slider-container {
+  height: 100vh;
+  display: inline-flex;
+  overflow: hidden;
+  transform: translateX(0);
+  transition: transform 0.3s ease-out;
+}
+
+.slide {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+.slide * {
+  width: 100%;
+  height: 100%;
+}
+.slide img {
+  object-fit: cover;
+}
+
+#prev-button {
+  position: fixed;
+  top: 50%;
+  left: -35px;
+  transform: translate(0, -50%);
+  color: #067cfb;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background: none;
+}
+
+#next-button {
+  position: fixed;
+  top: 50%;
+  right: -30px;
+  transform: translate(0, -50%);
+  color: #067cfb;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+button:disabled#prev-button > svg > g,
+button:disabled#next-button > svg > g {
+  fill: #647e97 !important;
+}
